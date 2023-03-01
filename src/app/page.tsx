@@ -1,12 +1,14 @@
 import { Inter } from "next/font/google";
+import Button from "./components/Button/Button";
 import styles from "./page.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
-			<h1 className={inter.className}>byron wade</h1>
+		<main>
+			<h1 className="font-serif">byron wade</h1>
+			<Button>Button</Button>
 		</main>
 	);
 }

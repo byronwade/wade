@@ -44,7 +44,7 @@ module.exports = {
 		backdropOpacity: ({ theme }) => theme("opacity"),
 		backdropSaturate: ({ theme }) => theme("saturate"),
 		backdropSepia: ({ theme }) => theme("sepia"),
-		backgroundColor: ({ theme }) => theme("colors"),
+		backgroundColor: (theme) => ({ ...theme("colors"), brand: "#223843" }),
 		backgroundImage: {
 			none: "none",
 			"gradient-to-t": "linear-gradient(to top, var(--tw-gradient-stops))",
@@ -136,6 +136,7 @@ module.exports = {
 		},
 		caretColor: ({ theme }) => theme("colors"),
 		colors: ({ colors }) => ({
+			brand: "#223843",
 			inherit: colors.inherit,
 			current: colors.current,
 			transparent: colors.transparent,
@@ -305,8 +306,8 @@ module.exports = {
 			DEFAULT: "1",
 		},
 		fontFamily: {
-			sans: ["ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Roboto", '"Helvetica Neue"', "Arial", '"Noto Sans"', "sans-serif", '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-			serif: ["ui-serif", "Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
+			sans: ["Roboto", "sans-serif"],
+			serif: ["Times New Roman", "serif"],
 			mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", '"Liberation Mono"', '"Courier New"', "monospace"],
 		},
 		fontSize: {
