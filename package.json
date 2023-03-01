@@ -31,7 +31,10 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
-    "eslint-plugin-storybook": "^0.6.11"
+    "eslint-plugin-storybook": "^0.6.11",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
   }
 }
