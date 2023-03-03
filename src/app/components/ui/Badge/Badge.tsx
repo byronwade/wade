@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const badge = cva("inline-block whitespace-nowrap rounded-[0.27rem] text-center align-baseline font-bold leading-none", {
+const badge = cva("inline-block whitespace-nowrap rounded text-center align-baseline font-bold leading-none", {
   variants: {
     intent: {
       brand: [
@@ -31,7 +31,9 @@ const badge = cva("inline-block whitespace-nowrap rounded-[0.27rem] text-center 
 	  ],
     },
     size: {
-        small: ["px-[0.65em]", "pt-[0.35em]", "pb-[0.25em]", "text-[0.75em]"],
+        small: ["px-[0.45em]", "py-[0.15em]", "text-[0.70em]"],
+        medium: ["px-[0.85em]", "py-[0.35em]", "text-[0.75em]"],
+        large: ["px-[0.85em]", "py-[0.45em]", "text-[0.95em]"],
     }
   },
   compoundVariants: [{ intent: "brand", className: "" }],

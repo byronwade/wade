@@ -38,12 +38,12 @@ const alert = cva("rounded w-full p-4 text-sm font-medium", {
 });
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.HTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof alert> {}
 
 export const Alert: React.FC<ButtonProps> = ({
   className,
   intent,
   ...props
-}) => <button className={twMerge(alert({ intent, className }))} {...props} />;
+}) => <div className={twMerge(alert({ intent, className }))} {...props}></div>;
 
