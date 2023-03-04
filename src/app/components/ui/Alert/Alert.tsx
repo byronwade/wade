@@ -4,36 +4,40 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const alert = cva("rounded w-full p-4 text-sm font-medium", {
   variants: {
-    intent: {
-      brand: [
-        "bg-brand-500",
+    color: {
+    brand: [
+      "bg-brand",
+      "text-white"
+    ],
+    black: [
+      "bg-black",
+      "text-white"
+    ],
+    white: [
+      "bg-white",
+      "text-black"
+    ],
+	  green: [
+        "bg-green",
         "text-white"
-      ],
-      secondary: [
-        "bg-white",
+	  ],
+	  yellow: [
+        "bg-yellow",
         "text-gray-800"
-      ],
-	  success: [
-        "bg-green-600",
+	  ],
+	  blue: [
+        "bg-blue",
         "text-white"
 	  ],
-	  warning: [
-        "bg-yellow-400",
-        "text-gray-800"
-	  ],
-	  info: [
-        "bg-blue-600",
-        "text-white"
-	  ],
-	  danger: [
-        "bg-red-600",
+	  red: [
+        "bg-red",
         "text-white"
 	  ],
     },
   },
-  compoundVariants: [{ intent: "brand", className: "" }],
+  compoundVariants: [{ color: "brand", className: "" }],
   defaultVariants: {
-    intent: "brand",
+    color: "brand",
   },
 });
 
@@ -43,7 +47,7 @@ export interface ButtonProps
 
 export const Alert: React.FC<ButtonProps> = ({
   className,
-  intent,
+  color,
   ...props
-}) => <div className={twMerge(alert({ intent, className }))} {...props}></div>;
+}) => <div className={twMerge(alert({ color, className }))} {...props}></div>;
 

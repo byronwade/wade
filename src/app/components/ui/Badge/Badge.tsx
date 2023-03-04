@@ -4,29 +4,37 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const badge = cva("inline-block whitespace-nowrap rounded text-center align-baseline font-bold leading-none", {
   variants: {
-    intent: {
+    color: {
       brand: [
-        "bg-brand-500",
+        "bg-brand",
         "text-white"
       ],
       secondary: [
         "bg-white",
         "text-gray-800"
       ],
-	  success: [
-        "bg-green-600",
+      black: [
+          "bg-black",
+          "text-white"
+      ],
+      white: [
+          "bg-white",
+          "text-black"
+      ],
+	  green: [
+        "bg-green",
         "text-white"
 	  ],
-	  warning: [
-        "bg-yellow-400",
+	  yellow: [
+        "bg-yellow",
         "text-gray-800"
 	  ],
-	  info: [
-        "bg-blue-600",
+	  blue: [
+        "bg-blue",
         "text-white"
 	  ],
-	  danger: [
-        "bg-red-600",
+	  red: [
+        "bg-red",
         "text-white"
 	  ],
     },
@@ -36,9 +44,9 @@ const badge = cva("inline-block whitespace-nowrap rounded text-center align-base
         large: ["px-[0.85em]", "py-[0.45em]", "text-[0.95em]"],
     }
   },
-  compoundVariants: [{ intent: "brand", className: "" }],
+  compoundVariants: [{ color: "brand", className: "" }],
   defaultVariants: {
-    intent: "brand",
+    color: "brand",
     size: "small"
   },
 });
@@ -49,8 +57,8 @@ export interface ButtonProps
 
 export const Badge: React.FC<ButtonProps> = ({
   className,
-  intent,
+  color,
   size,
   ...props
-}) => <button className={twMerge(badge({ intent, size, className }))} {...props} />;
+}) => <button className={twMerge(badge({ color, size, className }))} {...props} />;
 
