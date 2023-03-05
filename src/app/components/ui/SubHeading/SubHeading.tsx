@@ -12,10 +12,10 @@ const subheading = cva("mt-6 text-lg leading-8", {
           "text-black dark:text-white-100",
       ],
       white: [
-          "text-white",
+          "text-white dark:text-black",
       ],
       gray: [
-          "text-white-800",
+        "text-black-200 dark:text-white-800",
       ],
 	  green: [
         "text-green",

@@ -15,7 +15,7 @@ const p = cva("mt-6 text-lg leading-8", {
           "text-white",
       ],
       gray: [
-          "text-white-800",
+          "text-black-200 dark:text-white-800",
       ],
 	  green: [
         "text-green",
