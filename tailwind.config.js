@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
+	darkMode: "class",
 	content: [
 		"./app/**/*.{js,ts,jsx,tsx}",
 		"./pages/**/*.{js,ts,jsx,tsx}",
@@ -35,7 +36,7 @@ module.exports = {
 				200: "#375B6D",
 				100: "#3E667A",
 			},
-			"brand-cream": {
+			brandCream: {
 				DEFAULT: "#f4ece8",
 				800: "#d8c8c3",
 				700: "#e1d1cd",
@@ -59,14 +60,14 @@ module.exports = {
 			},
 			white: {
 				DEFAULT: "#F7F7F7",
-				800: "#FFFFFF",
-				700: "#FDFDFD",
-				600: "#FAFAFA",
+				800: "#adadad",
+				700: "#c6c6c6",
+				600: "#dedede",
 				500: "#F7F7F7",
-				400: "#F4F4F4",
-				300: "#F1F1F1",
-				200: "#EEE",
-				100: "#EBEBEB",
+				400: "#f8f8f8",
+				300: "#f9f9f9",
+				200: "#fafafa",
+				100: "#fbfbfb",
 			},
 			gray: {
 				DEFAULT: "#808080",
@@ -103,14 +104,14 @@ module.exports = {
 			},
 			yellow: {
 				DEFAULT: "#F4E04D",
-				800: "#9C8C25",
-				700: "#AF9F2A",
-				600: "#C2B32F",
+				800: "#c3b33e",
+				700: "#c3b33e",
+				600: "#dcca45",
 				500: "#F4E04D",
-				400: "#F7E777",
-				300: "#F9EB9F",
-				200: "#FCEECA",
-				100: "#FEF0E4",
+				400: "#f5e35f",
+				300: "#f6e671",
+				200: "#f7e982",
+				100: "#f7e982",
 			},
 			green: {
 				DEFAULT: "#548B54",
@@ -124,15 +125,15 @@ module.exports = {
 				100: "#E8F1E8",
 			},
 			blue: {
-				DEFAULT: "#26a8c5",
-				800: "#1c8ca9",
-				700: "#1e94b3",
-				600: "#219ebc",
-				500: "#26a8c5",
-				400: "#49b7cd",
-				300: "#6dc6d6",
-				200: "#90d5de",
-				100: "#b3e4e7",
+				DEFAULT: "#199DDB",
+				800: "#126e99",
+				700: "#147eaf",
+				600: "#178dc5",
+				500: "#199DDB",
+				400: "#30a7df",
+				300: "#47b1e2",
+				200: "#5ebae6",
+				100: "#75c4e9",
 			},
 			purple: {
 				DEFAULT: "#9B4E91",
@@ -222,5 +223,5 @@ module.exports = {
 			10: "2.5rem",
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/forms")],
 };

@@ -1,8 +1,9 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
+import { XMarkIcon } from "@heroicons/react/20/solid";
 
-const badge = cva("inline-block whitespace-nowrap rounded text-center align-baseline font-bold !leading-none  drop-shadow-sm border border-transparent", {
+const banner = cva("flex items-center gap-x-6 py-2.5 px-6 sm:px-3.5 sm:before:flex-1 drop-shadow-sm border border-transparent", {
   variants: {
     color: {
 			brand: ["bg-brand text-white dark:bg-brand-200 border-brand-300"],
@@ -13,27 +14,28 @@ const badge = cva("inline-block whitespace-nowrap rounded text-center align-base
 			blue: ["bg-blue text-white border-blue-700"],
 			red: ["bg-red text-white border-red-700"],
     },
-    size: {
-        small: ["px-2", "py-1", "text-[0.70em]"],
-        medium: ["px-3", "py-2", "text-[0.75em]"],
-        large: ["px-3", "py-2", "text-[0.95em]"],
-    }
   },
   compoundVariants: [{ color: "brand", className: "" }],
   defaultVariants: {
     color: "brand",
-    size: "small"
   },
 });
 
-export interface BadgeProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof badge> {}
+export interface BannerProps
+  extends React.HTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof Banner> {}
 
-export const Badge: React.FC<BadgeProps> = ({
+export const Banner: React.FC<BannerProps> = ({
   className,
   color,
-  size,
   ...props
-}) => <span className={twMerge(badge({ color, size, className }))} {...props} />;
+}) => <div className={twMerge(banner({ color, className }))} {...props}>
+  {props.children}
+  <div className="flex flex-1 justify-end">
+						<button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+							<span className="sr-only">Dismiss</span>
+							<XMarkIcon className="h-5 w-5" aria-hidden="true" />
+						</button>
+					</div>
+</div>;
 
